@@ -7,14 +7,12 @@ matrix:
     node_js: 8
     env:
     - GULP_PLATFORM=linux
-before_install:
-- npm install
+
 after_success:
-- if [[ $TRAVIS_OS_NAME == "linux" ]]; then bash <(curl -s https://codecov.io/bash);
-  fi;
+- bash <(curl -s https://codecov.io/bash);
 deploy:
   provider: npm
   api_key: C0hvM4YNJv5tQ7zKDN1GdDRqAKE7LsYD5GIve9R8NNiia7Y4PxIkiP/RR/KGn2PD2acBw1/x/8TLhp+uHZHSk3og4FZlDS1Nz4Q0yRxsYvTug383+iL6xRwPeU4FIRb1In17OR1TZ1CJosBkJjnN8JKjNsVmESvlbzOpA/mNHMk9jEqdQizn7rZA73+90hG2F9fxi6VOxZ/UGHSqnyjMcunvT2cYrXx9VPxIENNsbC/mG6F7W7soad6I9QwaVYqfEFBEbknXoO+KwHdS5ajesNJZ/BC4H+4kBCK48ssb65BhZfBX5A5V2rOsLsJZrAUDyLQeju80m43CqIru19oWDkVPhhw7EqkEibknsg+Z4btaOv8ngPNznS0GzKKmUGa9l+2Afrb57t+u1Cyybp67PxUBXS0bK0BxQ50GoNe5wigDH8dHSKKdUub4uCrUk+HxVKD0Ci5AjUsS2llScgSKESAObzALnKiLtAbpQIN3mWeVFac8E+TprVVVWWcEi2LRpeE0Umpe/qddbsJ0GQ1r5h8UDPuhU8QqMk7LMSLGbQgeCH16tLR3x4KhNK21ge8vB9McHAqdfYRwysyXq4avMd3+Lqs69Ln9TQ4/00SZ0Ul694fsUOtP/FTRLUPbX39kCwz/FmSJ9uUri5uwQiC0HHtBBrZ47F3rvCT+0KJSNKo=
 script:
-- npm test -- --coverage; fi;
+- npm test -- --coverage;
 
