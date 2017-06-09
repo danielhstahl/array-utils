@@ -7,13 +7,14 @@ matrix:
     node_js: 8
     env:
     - GULP_PLATFORM=linux
-
 after_success:
 - bash <(curl -s https://codecov.io/bash);
 deploy:
   provider: npm
-  email: "danstahl1138@gmail.com"
-  api_key: C0hvM4YNJv5tQ7zKDN1GdDRqAKE7LsYD5GIve9R8NNiia7Y4PxIkiP/RR/KGn2PD2acBw1/x/8TLhp+uHZHSk3og4FZlDS1Nz4Q0yRxsYvTug383+iL6xRwPeU4FIRb1In17OR1TZ1CJosBkJjnN8JKjNsVmESvlbzOpA/mNHMk9jEqdQizn7rZA73+90hG2F9fxi6VOxZ/UGHSqnyjMcunvT2cYrXx9VPxIENNsbC/mG6F7W7soad6I9QwaVYqfEFBEbknXoO+KwHdS5ajesNJZ/BC4H+4kBCK48ssb65BhZfBX5A5V2rOsLsJZrAUDyLQeju80m43CqIru19oWDkVPhhw7EqkEibknsg+Z4btaOv8ngPNznS0GzKKmUGa9l+2Afrb57t+u1Cyybp67PxUBXS0bK0BxQ50GoNe5wigDH8dHSKKdUub4uCrUk+HxVKD0Ci5AjUsS2llScgSKESAObzALnKiLtAbpQIN3mWeVFac8E+TprVVVWWcEi2LRpeE0Umpe/qddbsJ0GQ1r5h8UDPuhU8QqMk7LMSLGbQgeCH16tLR3x4KhNK21ge8vB9McHAqdfYRwysyXq4avMd3+Lqs69Ln9TQ4/00SZ0Ul694fsUOtP/FTRLUPbX39kCwz/FmSJ9uUri5uwQiC0HHtBBrZ47F3rvCT+0KJSNKo=
+  email: danstahl1138@gmail.com
+  api_key:
+    secure: QnAqbTDk9qV47jg9BHHPuS7ZZFEJ6LFVKTA1T9iqRuwcaJAqT93eXCIeqJ9JK3+t+8aXflSMD4L0Kq7184OSkNFmNe6B+NoC/GKznyuhmrkuwwn8I2lxHpm5W0g9OjOk0ohNX/5Zv4RzCNbSHnFkege+z/4A9b6IN4yklR+Xa96iPfICU1RGOn6e9WPajUdLwHDAnsngou5KAXgJ08Icwvw3t5zYQM5j7kVkwrTqL2nyNZAU4t3FGd2oyfFuwlDw7CJF2lY+ac0e8INxEYj6N4Jo0SvipJDtCLnWoLzpoflorXiOFp9wW3Z8/DF5TTs4TfPjqJBMc/Ga5YNtDvQnqHOyq2J+iIG9cvrgtPgC8MGGTOBUmRlO+0V3UvYnhEZqHUTrw3TNF4LzRJElGwzGkUCvbF6VqdlpiZ4Vpa12JKkoDgK19PEgscnmqcucfmqzNJrhhN5hhhBt+KBoFbvc0ILRq9Dngxm+zM2hRkkRarCA6FE35IE83N6osZtGOYmYQDIRbryR8edU7yg8nj144cJ9L62z6APcWc9TVaOOUSuBXszLBxxKHqtzb74cz4oO+knIvLfkSvrYOpoi36w6hq1hST8fnkPFZ9kT6UEp+BzuX19rrSF9ewRYHzj6xUck42lKxFjrbuZ4DiMA3q98BVL0BygJSGNAtZCf+KQxnrA=
+  on:
+    repo: phillyfan1138/array-utils
 script:
 - npm test -- --coverage;
-
