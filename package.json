@@ -1,5 +1,5 @@
 {
-  "name": "arrayutils",
+  "name": "array_utils",
   "version": "1.0.0",
   "description": "Some basic array utilities",
   "main": "index.js",
