@@ -9,11 +9,10 @@ matrix:
     - GULP_PLATFORM=linux
 after_success:
 - bash <(curl -s https://codecov.io/bash);
-before_deploy:
-- npm install
 deploy:
   provider: npm
   email: danstahl1138@gmail.com
+  skip_cleanup: true
   api_key:
     secure: QnAqbTDk9qV47jg9BHHPuS7ZZFEJ6LFVKTA1T9iqRuwcaJAqT93eXCIeqJ9JK3+t+8aXflSMD4L0Kq7184OSkNFmNe6B+NoC/GKznyuhmrkuwwn8I2lxHpm5W0g9OjOk0ohNX/5Zv4RzCNbSHnFkege+z/4A9b6IN4yklR+Xa96iPfICU1RGOn6e9WPajUdLwHDAnsngou5KAXgJ08Icwvw3t5zYQM5j7kVkwrTqL2nyNZAU4t3FGd2oyfFuwlDw7CJF2lY+ac0e8INxEYj6N4Jo0SvipJDtCLnWoLzpoflorXiOFp9wW3Z8/DF5TTs4TfPjqJBMc/Ga5YNtDvQnqHOyq2J+iIG9cvrgtPgC8MGGTOBUmRlO+0V3UvYnhEZqHUTrw3TNF4LzRJElGwzGkUCvbF6VqdlpiZ4Vpa12JKkoDgK19PEgscnmqcucfmqzNJrhhN5hhhBt+KBoFbvc0ILRq9Dngxm+zM2hRkkRarCA6FE35IE83N6osZtGOYmYQDIRbryR8edU7yg8nj144cJ9L62z6APcWc9TVaOOUSuBXszLBxxKHqtzb74cz4oO+knIvLfkSvrYOpoi36w6hq1hST8fnkPFZ9kT6UEp+BzuX19rrSF9ewRYHzj6xUck42lKxFjrbuZ4DiMA3q98BVL0BygJSGNAtZCf+KQxnrA=
   on:
