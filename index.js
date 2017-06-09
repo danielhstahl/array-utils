@@ -9,8 +9,8 @@ const innerjoin=(leftArray=[], rightArray=[], condition=(left, right)=>left===ri
         return rightArray.filter((right)=>condition(left, right))[0]
     })
 }
-const convertArrayToObj=(arr=[])=>arr.reduce((aggr, val)=>Object.assign({}, aggr, {[val]:true}))
-const getUniqueArray=Array.from?(array)=>[...new Set(array)]:(array)=>array.sort().filter((val, index, arr)=>!index||val!==arr[index-1])//ensure unique values
+const convertArrayToObj=(arr=[])=>arr.reduce((aggr, val)=>Object.assign({}, aggr, {[val]:true}), {})
+const getUniqueArray=Array.from?(array=[])=>[...new Set(array)]:(array)=>array.sort().filter((val, index, arr)=>!index||val!==arr[index-1])//ensure unique values
 
 module.exports.leftjoin=leftjoin
 module.exports.innerjoin=innerjoin
