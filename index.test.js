@@ -15,6 +15,15 @@ it('returns empty object when provided empty array', ()=>{
     expect(arrayUtils.convertArrayToObj(arr)).toEqual(expected)
 })
 
+it('correctly returns true when array has length greater than zero', ()=>{
+    const arr=["one", "two", "three"]
+    expect(arrayUtils.hasLengthGreaterThanZero(arr)).toEqual(true)
+})
+it('correctly returns false when array has length zero', ()=>{
+    const arr=[]
+    expect(arrayUtils.hasLengthGreaterThanZero(arr)).toEqual(false)
+})
+
 it('returns all matches', () => {
     const comb=arrayUtils.leftjoin(leftArray, rightArray, (left, right)=>left.id===right.id);
     expect(comb).toEqual([{id:1, val:5},{id:2, val:6, another:4},{id:3, val:7},])

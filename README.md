@@ -10,3 +10,4 @@ This library provides some basic array utilities for use in browser and nodejs.
 * Inner Join
 * Returns array of unique values
 * Converts array values to keys
+* Boolean to indicate whether the array has length greater than zero
