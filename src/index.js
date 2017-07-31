@@ -12,12 +12,14 @@ const innerjoin=(leftArray=[], rightArray=[], condition=(left, right)=>left===ri
 const convertArrayToObjByKey=(arr=[], key)=>arr.reduce((aggr, val)=>Object.assign({}, aggr, {[val[key]]:val}), {})
 
 const unionObj=(obj1={}, obj2={}, arr1=[], arr2=[], leftKey="", rightKey="", manageResult=(left, right)=>right?right:left)=>{
-    return [...arr1.map(val=>{
-        return manageResult(obj1[val[leftKey]], obj2[val[leftKey]])
-    }), 
-    ...arr2.filter(val=>!obj1[val[rightKey]]).map(val=>{
-        return manageResult(obj1[val[rightKey]], obj2[val[rightKey]])
-    })]
+    return [
+        ...arr1.map(
+            val=>manageResult(obj1[val[leftKey]], obj2[val[leftKey]])
+        ), 
+        ...arr2.filter(val=>!obj1[val[rightKey]]).map(
+            val=>manageResult(obj1[val[rightKey]], obj2[val[rightKey]])
+        )
+    ]
 }
 const outerjoin=(leftArray=[], rightArray=[], leftKey="", rightKey="", manageResult=(left, right)=>right?right:left)=>{
     const createObjFromLeft=convertArrayToObjByKey(leftArray, leftKey)

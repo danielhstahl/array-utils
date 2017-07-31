@@ -57,3 +57,30 @@ it("returns all results from both array when each contains items not in the othe
     const expected=[{id:1, val:5},{id:2, val:6},{id:3, val:7}, {id:10, val:8}]
     expect(arrayUtils.outerjoin(leftArray, rightArray, "id", "id")).toEqual(expected)
 })
+it("returns all results for a more complicated case", ()=>{
+    const leftKey="issueId"
+    const rightKey="ISSUEID"
+    const state=[{issueId:1, someOtherKey:3}, {issueId:2, someOtherKey:4}]
+    const pastDue=[{ISSUEID:1}, 
+        {ISSUEID:3},
+        {ISSUEID:4},
+    ]
+    const expected=[
+        {issueId:1, someOtherKey:3, pastDue:true},
+        {issueId:2, someOtherKey:4},
+        {issueId:3, pastDue:true},
+        {issueId:4, pastDue:true},
+    ]
+    const myJoin=arrayUtils.outerjoin(state, pastDue, leftKey, rightKey, (left, right)=>{
+        if(left&&right){
+            return Object.assign({}, left, {pastDue:true})
+        }
+        else if(left){
+            return left
+        }
+        else {
+            return {[leftKey]:right[rightKey], pastDue:true}
+        }
+    })
+    expect(myJoin).toEqual(expected)
+})
