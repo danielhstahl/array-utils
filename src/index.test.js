@@ -44,3 +44,16 @@ it('returns unique array with only 1', ()=>{
     const expectedResult=[1]
     expect(arrayUtils.getUniqueArray(arr)).toEqual(expectedResult);
 })
+it("returns obj from array", ()=>{
+    const expected={1:{id:1, val:5}, 2:{id:2, val:6}, 3:{id:3, val:7}}
+    expect(arrayUtils.convertArrayToObjByKey(leftArray, "id")).toEqual(expected)
+})
+it("returns left join when all match in outer join", ()=>{
+    const expected=[{id:1, val:5},{another:4, id:2, val:6},{id:3, val:7}]
+    expect(arrayUtils.outerjoin(leftArray, rightArray, "id", "id")).toEqual(expected)
+})
+it("returns all results from both array when each contains items not in the other", ()=>{
+    const rightArray=[{id:2, val:6}, {id:10, val:8}]
+    const expected=[{id:1, val:5},{id:2, val:6},{id:3, val:7}, {id:10, val:8}]
+    expect(arrayUtils.outerjoin(leftArray, rightArray, "id", "id")).toEqual(expected)
+})
