@@ -84,3 +84,29 @@ it("returns all results for a more complicated case", ()=>{
     })
     expect(myJoin).toEqual(expected)
 })
+it("returns all results when no left state", ()=>{
+    const leftKey="issueId"
+    const rightKey="ISSUEID"
+    const state=[]
+    const pastDue=[{ISSUEID:1}, 
+        {ISSUEID:3},
+        {ISSUEID:4},
+    ]
+    const expected=[
+        {issueId:1,  pastDue:true},
+        {issueId:3, pastDue:true},
+        {issueId:4, pastDue:true},
+    ]
+    const myJoin=arrayUtils.outerjoin(state, pastDue, leftKey, rightKey, (left, right)=>{
+        if(left&&right){
+            return Object.assign({}, left, {pastDue:true})
+        }
+        else if(left){
+            return left
+        }
+        else {
+            return {[leftKey]:right[rightKey], pastDue:true}
+        }
+    })
+    expect(myJoin).toEqual(expected)
+})
