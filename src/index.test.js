@@ -110,3 +110,10 @@ it("returns all results when no left state", ()=>{
     })
     expect(myJoin).toEqual(expected)
 })
+it("returns only left when blank right", ()=>{
+
+    expect(arrayUtils.outerjoin(leftArray, [], "id", "id")).toEqual(leftArray)
+})
+it("returns only right when blank left", ()=>{
+    expect(arrayUtils.outerjoin([], rightArray, "id", "id")).toEqual(rightArray)
+})
