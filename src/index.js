@@ -29,9 +29,15 @@ const outerjoin=(leftArray=[], rightArray=[], leftKey="", rightKey="", manageRes
 const convertArrayToObj=(arr=[])=>arr.reduce((aggr, val)=>Object.assign({}, aggr, {[val]:true}), {})
 
 const hasLengthGreaterThanZero=(arr=[])=>arr.length>0?true:false
-
-const getUniqueArray=(array, key)=>key?array.sort((a, b)=>a[key]>b[key]).filter((val, index, arr)=>!index||val[key]!==arr[index-1][key]):array.sort().filter((val, index, arr)=>!index||val!==arr[index-1])//ensure unique values
-
+const sortNull=(a, b)=>(a===null)-(b===null) || +(a>b)||-(a<b)
+const getUniqueArray=(array, key)=>{
+    if(key){
+        return array.sort((a, b)=>sortNull(a[key], b[key])).filter((val, index, arr)=>!index||val[key]!==arr[index-1][key])
+    }
+    else {
+        return array.sort(sortNull).filter((val, index, arr)=>!index||val!==arr[index-1])
+    }
+}
 module.exports.leftjoin=leftjoin
 module.exports.innerjoin=innerjoin
 module.exports.convertArrayToObj=convertArrayToObj

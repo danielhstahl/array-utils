@@ -49,6 +49,31 @@ it('returns unique array from array with keys', ()=>{
     const expectedResult=[{hello:4, world:2}, {hello:5, world:3}]
     expect(arrayUtils.getUniqueArray(arr, "hello")).toEqual(expectedResult)
 })
+it('returns unique array from array with keys and out of order and with null', ()=>{
+    const arr=[{hello:4, world:2}, {hello:5, world:3}, {hello:4, world:3},{hello:5, world:4}, {hello:null, world:4}]
+    const expectedResult=[ {hello:4, world:2}, {hello:5, world:3}, {hello:null,world:4}]
+    expect(arrayUtils.getUniqueArray(arr, "hello")).toEqual(expectedResult)
+})
+it('returns unique array from array with more complicated case', ()=>{
+    const arr=[
+        {CLASSIFICATION:"High"}, 
+        {CLASSIFICATION:"Moderate"}, 
+        {CLASSIFICATION:null}, 
+        {CLASSIFICATION:"High"},
+        {CLASSIFICATION:"High"},
+        {CLASSIFICATION:null},
+        {CLASSIFICATION:"Low"},
+        {CLASSIFICATION:"Moderate"},
+        {CLASSIFICATION:"Low"},
+    ]
+    const expectedResult=[ 
+        {CLASSIFICATION:"High"}, 
+        {CLASSIFICATION:"Low"},
+        {CLASSIFICATION:"Moderate"}, 
+        {CLASSIFICATION:null}
+    ]
+    expect(arrayUtils.getUniqueArray(arr, "CLASSIFICATION")).toEqual(expectedResult)
+})
 it("returns obj from array", ()=>{
     const expected={1:{id:1, val:5}, 2:{id:2, val:6}, 3:{id:3, val:7}}
     expect(arrayUtils.convertArrayToObjByKey(leftArray, "id")).toEqual(expected)
@@ -122,3 +147,6 @@ it("returns only left when blank right", ()=>{
 it("returns only right when blank left", ()=>{
     expect(arrayUtils.outerjoin([], rightArray, "id", "id")).toEqual(rightArray)
 })
+
+
+
