@@ -30,7 +30,7 @@ const convertArrayToObj=(arr=[])=>arr.reduce((aggr, val)=>Object.assign({}, aggr
 
 const hasLengthGreaterThanZero=(arr=[])=>arr.length>0?true:false
 
-const getUniqueArray=Array.from?(array=[])=>[...new Set(array)]:(array)=>array.sort().filter((val, index, arr)=>!index||val!==arr[index-1])//ensure unique values
+const getUniqueArray=(array, key)=>key?array.sort((a, b)=>a[key]<b[key]).filter((val, index, arr)=>!index||val[key]!==arr[index-1][key]):array.sort().filter((val, index, arr)=>!index||val!==arr[index-1])//ensure unique values
 
 module.exports.leftjoin=leftjoin
 module.exports.innerjoin=innerjoin

@@ -44,6 +44,11 @@ it('returns unique array with only 1', ()=>{
     const expectedResult=[1]
     expect(arrayUtils.getUniqueArray(arr)).toEqual(expectedResult);
 })
+it('returns unique array from array with keys', ()=>{
+    const arr=[{hello:4, world:2}, {hello:4, world:3}]
+    const expectedResult=[{hello:4, world:2}]
+    expect(arrayUtils.getUniqueArray(arr, "hello")).toEqual(expectedResult)
+})
 it("returns obj from array", ()=>{
     const expected={1:{id:1, val:5}, 2:{id:2, val:6}, 3:{id:3, val:7}}
     expect(arrayUtils.convertArrayToObjByKey(leftArray, "id")).toEqual(expected)
