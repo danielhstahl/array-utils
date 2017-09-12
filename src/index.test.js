@@ -45,8 +45,8 @@ it('returns unique array with only 1', ()=>{
     expect(arrayUtils.getUniqueArray(arr)).toEqual(expectedResult);
 })
 it('returns unique array from array with keys', ()=>{
-    const arr=[{hello:4, world:2}, {hello:4, world:3}]
-    const expectedResult=[{hello:4, world:2}]
+    const arr=[{hello:4, world:2}, {hello:4, world:3}, {hello:5, world:3}, {hello:5, world:4}]
+    const expectedResult=[{hello:4, world:2}, {hello:5, world:3}]
     expect(arrayUtils.getUniqueArray(arr, "hello")).toEqual(expectedResult)
 })
 it("returns obj from array", ()=>{
