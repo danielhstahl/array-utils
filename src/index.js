@@ -31,7 +31,7 @@ const convertArrayToObj=(arr=[])=>arr.reduce((aggr, val)=>Object.assign({}, aggr
 const hasLengthGreaterThanZero=(arr=[])=>arr.length>0?true:false
 const sortNull=(a, b)=>(a===null)-(b===null) || +(a>b)||-(a<b)
 const getUniqueArray=(array, key)=>{
-    if(key){
+    if(key!==undefined){
         return array.sort((a, b)=>sortNull(a[key], b[key])).filter((val, index, arr)=>!index||val[key]!==arr[index-1][key])
     }
     else {

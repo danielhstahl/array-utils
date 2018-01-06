@@ -49,6 +49,11 @@ it('returns unique array from array with keys', ()=>{
     const expectedResult=[{hello:4, world:2}, {hello:5, world:3}]
     expect(arrayUtils.getUniqueArray(arr, "hello")).toEqual(expectedResult)
 })
+it('returns unique array from array of arrays', ()=>{
+    const arr=[[4, 2], [4, 3], [5, 3], [5, 4]]
+    const expectedResult=[[4, 2], [5, 3]]
+    expect(arrayUtils.getUniqueArray(arr, 0)).toEqual(expectedResult)
+})
 it('returns unique array from array with keys and out of order and with null', ()=>{
     const arr=[{hello:4, world:2}, {hello:5, world:3}, {hello:4, world:3},{hello:5, world:4}, {hello:null, world:4}]
     const expectedResult=[ {hello:4, world:2}, {hello:5, world:3}, {hello:null,world:4}]
