@@ -23,8 +23,8 @@
   "homepage": "https://github.com/phillyfan1138/array-utils#readme",
   "dependencies": {},
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-env": "^1.6.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "jest": "^22.0.4"
   }
 }
