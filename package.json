@@ -1,6 +1,6 @@
 {
   "name": "array_utils",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Some basic array utilities",
   "main": "./dist/index.js",
   "jest": {
@@ -23,8 +23,9 @@
   "homepage": "https://github.com/phillyfan1138/array-utils#readme",
   "dependencies": {},
   "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "jest": "^23.6.0"
+    "jest": "^24.8.0"
   }
 }
