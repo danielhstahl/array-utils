@@ -4,7 +4,7 @@
 | :---------------: | :-------------------: |
 | ![lin-badge]      | ![cov-badge]          |
 
-[lin-badge]: https://github.com/phillyfan1138/array-utils/workflows/Rust/badge.svg
+[lin-badge]: https://github.com/phillyfan1138/array-utils/workflows/prerelease/badge.svg
 [lin-link]:  https://github.com/phillyfan1138/array-utils/actions
 [cov-badge]: https://codecov.io/gh/phillyfan1138/array-utils/branch/master/graph/badge.svg
 [cov-link]:  https://codecov.io/gh/phillyfan1138/array-utils
