@@ -1,7 +1,13 @@
 ## Array Utils
 
-[![Build Status](https://travis-ci.org/phillyfan1138/array-utils.svg?branch=master)](https://travis-ci.org/phillyfan1138/array-utils)
-[![codecov](https://codecov.io/gh/phillyfan1138/array-utils/branch/master/graph/badge.svg)](https://codecov.io/gh/phillyfan1138/array-utils)
+| [Linux][lin-link] |  [Codecov][cov-link]  |
+| :---------------: | :-------------------: |
+| ![lin-badge]      | ![cov-badge]          |
+
+[lin-badge]: https://github.com/phillyfan1138/array-utils/workflows/Rust/badge.svg
+[lin-link]:  https://github.com/phillyfan1138/array-utils/actions
+[cov-badge]: https://codecov.io/gh/phillyfan1138/array-utils/branch/master/graph/badge.svg
+[cov-link]:  https://codecov.io/gh/phillyfan1138/array-utils
 
 `npm install --save array_utils`
 
