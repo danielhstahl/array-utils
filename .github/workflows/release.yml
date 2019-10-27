@@ -1,10 +1,11 @@
+
 name: release
 on:
     release:
         types: [published]
 
 jobs:
-    prerelease:
+    release:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v1
