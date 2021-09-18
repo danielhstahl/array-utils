@@ -13,19 +13,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phillyfan1138/array-utils.git"
+    "url": "git+https://github.com/danielhstahl/array-utils.git"
   },
   "author": "Daniel Stahl",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/phillyfan1138/array-utils/issues"
+    "url": "https://github.com/danielhstahl/array-utils/issues"
   },
-  "homepage": "https://github.com/phillyfan1138/array-utils#readme",
-  "dependencies": {},
+  "homepage": "https://github.com/danielhstahl/array-utils#readme",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.7",
-    "@babel/preset-env": "^7.10.4",
-    "jest": "^25.1.0"
+    "@babel/cli": "^7.15",
+    "@babel/core": "^7.15",
+    "@babel/preset-env": "^7.15",
+    "jest": "^27.2"
   }
 }
