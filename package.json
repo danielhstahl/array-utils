@@ -1,6 +1,6 @@
 {
   "name": "array_utils",
-  "version": "1.5.2",
+  "version": "1.5.4",
   "description": "Some basic array utilities",
   "main": "./dist/index.js",
   "jest": {
